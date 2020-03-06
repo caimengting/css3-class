@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>学生信息</title>
+		<style type="text/css">
+			article {
+				border: 1px solid #000000;
+				width: 500px;
+				height: 600px;
+				padding-left: 10px;
+			}
+
+			#student-file {
+				color: #FF0000;
+				height: 30px;
+				font-size: 18px;
+			}
+
+			input {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				width: 475px;
+				height: 25px;
+				font-size: 15px;
+				color: gray;
+
+			}
+
+			.red {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+
+		<h2>学生信息</h2>
+		<article>
+			<div id="student-file">
+				学生档案
+			</div>
+			<form action="" method="post">
+				姓名：
+				<br>
+				<input type="text" name="name" id="" required="required" placeholder="请输入姓名" />
+				<span class="red">*</span>
+				学号:
+				<br>
+				<input type="text" name="num" id="" required="required" placeholder="请输入学号" />
+				<span class="red">*</span>
+				手机号码：
+				<br>
+				<input type="tel" name="tel" id="" required="required" placeholder="请输入手机号" />
+				<span class="red">*</span>
+				邮箱地址：
+				<input type="email" name="email" id="" required="required" placeholder="请输入邮箱地址" />
+				<span class="red">*</span>
+				录取学校：
+				<br>
+				<input type="search" name="sea1" list="names" />
+				<datalist id="names">
+					<option>清华大学</option>
+					<option>北京大学</option>
+					<option>复旦大学</option>
+					<option>河北师范大学</option>
+					<option>天津大学</option>
+					<!-- 等等 -->
+				</datalist>
+				<br>
+				入学成绩：
+				<!-- 假设成绩0-750 -->
+				<input type="number" name="score" id="" value="" min="0" max="750" />
+				<br>
+				入学时间：
+				<input type="date" name="date" id="" value="" />
+
+
+
+
+				<br><br>
+				<input type="submit" value="提交" />
+			</form>
+
+
+		</article>
+	</body>
+</html>
