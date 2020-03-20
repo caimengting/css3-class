@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- <html manifest="index.manifest"> -->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style type="text/css">
+        #box {
+            border: 2px solid #808080;
+            margin: 40px;
+            width: 800px;
+            position: relative;
+        }
+        
+        .box-wrap {
+            border: 1px solid #808080;
+            margin: 20px;
+        }
+        
+        #txt {
+            color: red;
+            font-weight: 800;
+            font-size: 50px;
+            /* border: 2px solid #808080; */
+            position: absolute;
+            top: -40px;
+            /* width: 300px; */
+            left: 50px;
+            background-color: #FFFFFF;
+        }
+        
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #808080;
+            margin: 10px;
+            display: inline-block;
+        }
+        
+        .box:hover {
+            transform: 1s;
+            transform: translateY(-8px);
+        }
+        
+        #text {
+            margin: 30px;
+            padding: 20px;
+            background-color: #808080;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="txt">
+            网页换肤
+        </div>
+        <div class="box-wrap">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div id="">
+            <div id="text">
+                LocalStorage将数据保存在客 户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    var a = ["#808080", "#F60", "yellow", "red", "blue", "green"];
+    var local = window.localStorage;
+
+    function getId(id) {
+        return document.getElementById(id);
+    }
+    if (local.color) {
+        //console.log(local.color)
+        getId('text').style.backgroundColor = local.color;
+    }
+
+    for (let i = 0; i < a.length; i++) {
+        document.getElementsByClassName("box")[i].style.backgroundColor = a[i];
+        document.getElementsByClassName("box")[i].onclick = function() {
+            //console.log(document.querySelectorAll("#text")[0].style.backgroundColor);
+            getId("text").style.backgroundColor = a[i];
+            local.color = a[i];
+        }
+    }
+</script>
+
+</html>
